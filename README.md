@@ -57,9 +57,10 @@ equal to 28x28 pixels and 1 is the number of channels, which is equal to that nu
 
 
 ## Results
-Results for KNN:
 
-Results for CNN:
+| Method | Results | Benchmark
+| KNN | k:40 -> accuracy: 73.5% | KNeighborsClassifier    {"n_neighbors":1,"p":2,"weights":"distance"} ->    84.7%
+| CNN | epochs: 10 -> accurracy: 92.32%  | 2 Conv+pooling    Preprocessing:None ->    87.6%
 
 ## Usage
 ### Running KNN
