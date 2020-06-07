@@ -4,7 +4,7 @@ The task was to make an algorithm that is capable of clasificating clothes image
 Dataset source: [fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist)
 It is a dataset where training set consist of 60000 examples and test set of 10000 examples.
 I made a KNN algorithm that is capable of predicting clothes classes with an accuracy of 73.5%, and a
-Convolution Neural Network that is capable of predicting clothes classes with an accuracy of 92.32%
+Convolution Neural Network that is capable of predicting clothes classes with an accuracy of 92.38%
 
 ## Methods
 The whole code is placed in the folder called scripts
@@ -58,9 +58,10 @@ equal to 28x28 pixels and 1 is the number of channels, which is equal to that nu
 
 ## Results
 
-| Method | Results | Benchmark
-| KNN | k:40 -> accuracy: 73.5% | KNeighborsClassifier    {"n_neighbors":1,"p":2,"weights":"distance"} ->    84.7%
-| CNN | epochs: 10 -> accurracy: 92.32%  | 2 Conv+pooling    Preprocessing:None ->    87.6%
+| Used method | Accuracy | Accuracy in benchmark
+| --- | --- | --- |
+| KNN | 73.50% | 84.7%
+| CNN | 92.38% | 87.6%
 
 ## Usage
 ### Running KNN
