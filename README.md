@@ -106,6 +106,9 @@ X_test = X_test / 255.0
 | CNN | 92.38% | 87.6%
 
 ### KNN output
+```
+Model accuracy: 0.7352000000000001 K value for lowest error: 40
+```
 
 ### CNN output
 ```
@@ -144,4 +147,8 @@ In order to run CNN, first we need to import keras and tensorflow. After that, w
 Our dataset will be loaded automaticly after running this method. When program is running, we will be able to see how much time
 is left to finish calculating result for each epoch, epoch accuracy and loss. After program finishes running, we will see
 overall loss and accuracy achieved by our neural network. If you want to get the same output that I did, do not change parameters 
-of the methods that were presented in method section.
+of the methods that were presented in method section. The result that you will get might not be equal to mine, but it should be 
+relatively close.
+
+Source of inspiration for CNN:
+https://www.youtube.com/watch?v=cAICT4Al5Ow
