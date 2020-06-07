@@ -1,7 +1,9 @@
 # Clothes classification using k-Nearest Neighbour and Convolution Neural Networks
 ## Introduction
 The task was to make an algorithm that is capable of clasificating clothes images. 
+
 Dataset source: [fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist)
+
 It is a dataset where training set consist of 60000 examples and test set of 10000 examples.
 I made a KNN algorithm that is capable of predicting clothes classes with an accuracy of 73.5%, and a
 Convolution Neural Network that is capable of predicting clothes classes with an accuracy of 92.38%
