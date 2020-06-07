@@ -29,9 +29,39 @@ test_knn - Loads dataset and runs model_selection_knn for some k_values.
 ### Convolutional Neural Networks
 In order to create this neural network, I am using tensorflow and keras.
 Script neural_network.py consist only of method test_cnn. This method runs our program.
-Our neural_network is made by using following layers:
+Our model summary looks like this:
 
-
+```
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv2d (Conv2D)              (None, 26, 26, 32)        320       
+_________________________________________________________________
+batch_normalization (BatchNo (None, 26, 26, 32)        128       
+_________________________________________________________________
+activation (Activation)      (None, 26, 26, 32)        0         
+_________________________________________________________________
+conv2d_1 (Conv2D)            (None, 24, 24, 32)        9248      
+_________________________________________________________________
+batch_normalization_1 (Batch (None, 24, 24, 32)        128       
+_________________________________________________________________
+activation_1 (Activation)    (None, 24, 24, 32)        0         
+_________________________________________________________________
+max_pooling2d (MaxPooling2D) (None, 12, 12, 32)        0         
+_________________________________________________________________
+flatten (Flatten)            (None, 4608)              0         
+_________________________________________________________________
+dense (Dense)                (None, 256)               1179904   
+_________________________________________________________________
+dropout (Dropout)            (None, 256)               0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 10)                2570      
+=================================================================
+Total params: 1,192,298
+Trainable params: 1,192,170
+Non-trainable params: 128
+_________________________________________________________________
+```
 
 Each of these functions is described bellow:
 
@@ -54,6 +84,16 @@ which helps prevent overfitting
 In order to be able to use Convolution2D on our dataset, first I need to change our training and test shape to 4 dimentional.
 Now training test will have shape (60000, 28, 28, 1) and test set (10000, 28, 28, 1). 28 is the picture size, which is
 equal to 28x28 pixels and 1 is the number of channels, which is equal to that number because our pictures are in grayscale.
+Also, we want to rescalate the image so that each pixel lies in interval [0, 1] instead of [0, 255], so we simply divide our sets 
+by 255.
+
+```
+X_train = X_train.reshape(X_train.shape[0], 28, 28, 1)
+X_test = X_test.reshape(X_test.shape[0], 28, 28, 1)
+
+X_train = X_train / 255.0
+X_test = X_test / 255.0
+```
 
 
 ## Results
@@ -62,6 +102,33 @@ equal to 28x28 pixels and 1 is the number of channels, which is equal to that nu
 | --- | --- | --- |
 | KNN | 73.50% | 84.7%
 | CNN | 92.38% | 87.6%
+
+### KNN output
+
+### CNN output
+```
+Epoch 1/10
+1875/1875 [==============================] - 68s 36ms/step - loss: 0.4178 - accuracy: 0.8516
+Epoch 2/10
+1875/1875 [==============================] - 68s 36ms/step - loss: 0.2664 - accuracy: 0.9009
+Epoch 3/10
+1875/1875 [==============================] - 67s 36ms/step - loss: 0.2216 - accuracy: 0.9181
+Epoch 4/10
+1875/1875 [==============================] - 67s 36ms/step - loss: 0.1882 - accuracy: 0.9307
+Epoch 5/10
+1875/1875 [==============================] - 69s 37ms/step - loss: 0.1597 - accuracy: 0.9403
+Epoch 6/10
+1875/1875 [==============================] - 68s 36ms/step - loss: 0.1363 - accuracy: 0.9492
+Epoch 7/10
+1875/1875 [==============================] - 68s 36ms/step - loss: 0.1130 - accuracy: 0.9588
+Epoch 8/10
+1875/1875 [==============================] - 68s 36ms/step - loss: 0.0952 - accuracy: 0.9639
+Epoch 9/10
+1875/1875 [==============================] - 68s 36ms/step - loss: 0.0805 - accuracy: 0.9700
+Epoch 10/10
+1875/1875 [==============================] - 68s 36ms/step - loss: 0.0680 - accuracy: 0.9743
+313/313 - 1s - loss: 0.2907 - accuracy: 0.9238
+```
 
 ## Usage
 ### Running KNN
