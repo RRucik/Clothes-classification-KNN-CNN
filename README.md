@@ -5,7 +5,7 @@ The task was to make an algorithm that is capable of clasificating clothes image
 Dataset source: [fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist)
 
 It is a dataset where training set consist of 60000 examples and test set of 10000 examples.
-I made a KNN algorithm that is capable of predicting clothes classes with an accuracy of 73.5%, and a
+I made a KNN algorithm that is capable of predicting clothes classes with an accuracy of 73.52%, and a
 Convolution Neural Network that is capable of predicting clothes classes with an accuracy of 92.38%
 
 ## Methods
@@ -102,7 +102,7 @@ X_test = X_test / 255.0
 
 | Used method | Accuracy | Accuracy in benchmark
 | --- | --- | --- |
-| KNN | 73.50% | 84.7%
+| KNN | 73.52% | 84.7%
 | CNN | 92.38% | 87.6%
 
 ### KNN output
