@@ -1,4 +1,4 @@
-# msidLab4 - Fashion_mnist classification using KNN (k-Nearest Neighbour) and CNN (Convolution Neural Networks)
+# msidLab4 - Fashion_mnist classification using k-Nearest Neighbour and Convolution Neural Networks
 ## Introduction
 The task was to make an algorithm that is capable of clasificating clothes images. 
 Dataset source: [fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist)
