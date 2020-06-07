@@ -11,13 +11,20 @@ The whole code is placed in the folder called scripts
 
 ### K-Nearest Neighbour
 Script knn.py consists of several methods:
+
 hamming_distance - Creates a hamming distance matrix for two matrices passed as parameters
+
 sort_train_labels_knn - Sorts classes by hamming distance matrix
+
 p_y_x_knn - Returns probability matrix of p(y|x) for each class from test set given some parameter k
+
 classification_error - Calculates classification error
+
 model_selection_knn - Returns model accuracy, best parameter k and array of errors for different k, given training and test sets
 and an array of k values
+
 test_knn - Loads dataset and runs model_selection_knn for some k_values. 
+
 
 ### Convolutional Neural Networks
 In order to create this neural network, I am using tensorflow and keras.
@@ -27,18 +34,27 @@ Our neural_network is made by using following layers:
 
 
 Each of these functions is described bellow:
+
 Convolution2D - creates a convolution kernel that is convolved with the layer input to produce a tensor of outputs.
+
 BatchNormalization - normalizes and scales inputs.
+
 Activation - applies an activation function to an output
+
 MaxPooling2D - downsamples the input representation by taking the maximum value over the window defined by pool_size
+
 Flatten - flattens the input
+
 Dense - your regular densely-connected NN layer
+
 Dropout - the dropout layer randomly sets input units to 0 with a frequency of rate at each step during training time, 
 which helps prevent overfitting
+
 
 In order to be able to use Convolution2D on our dataset, first I need to change our training and test shape to 4 dimentional.
 Now training test will have shape (60000, 28, 28, 1) and test set (10000, 28, 28, 1). 28 is the picture size, which is
 equal to 28x28 pixels and 1 is the number of channels, which is equal to that number because our pictures are in grayscale.
+
 
 ## Results
 Results for KNN:
