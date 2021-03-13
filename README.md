@@ -1,6 +1,6 @@
 # Clothes classification using k-Nearest Neighbour and Convolution Neural Networks
 ## Introduction
-The task was to make an algorithm that is capable of clasificating clothes images. 
+The task was to make an algorithm that is capable of classifying clothes images. 
 
 Dataset source: [fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist)
 
